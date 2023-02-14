@@ -66,7 +66,7 @@ ul #right-aligned {
 
 .form-box {
 	width: 40%;
-	margin: 5em auto 0;
+	margin: 0 auto 0;
 }
 
 .form-box form {
@@ -106,6 +106,21 @@ ul #right-aligned {
   transform: scale(1);
 }
 */
+
+.external-job {
+	display: grid;
+	padding: 0 1.5em;
+}
+
+.external-job label {
+	padding-top : 0.25em;
+	padding-bottom: 0.25em;
+}
+
+.external-job input[type="text"] {
+	padding: 0.5em;
+}
+
 .form-button {
 	float: right;
 	margin: 1.5em 1.5em 0.5em 0;
