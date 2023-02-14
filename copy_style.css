@@ -73,7 +73,7 @@ ul #right-aligned {
 	margin: 2em 0 1em;
 }
 
-.form-box .form-type {
+form .form-type {
 	display: block;
 	padding: 0.25em 1em;
 }
@@ -107,17 +107,17 @@ ul #right-aligned {
 }
 */
 
-.external-job {
+.external-job, .internal-job {
 	display: grid;
 	padding: 0 1.5em;
 }
 
-.external-job label {
+.external-job label, .internal-job label, .internal-job .internal-radio {
 	padding-top : 0.25em;
 	padding-bottom: 0.25em;
 }
 
-.external-job input[type="text"] {
+.external-job input[type="text"], .internal-job input[type="text"] {
 	padding: 0.5em;
 }
 
