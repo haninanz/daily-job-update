@@ -38,6 +38,49 @@ ul #right-aligned {
 	font-weight: 500;
 }
 
+.drop-down {
+	overflow: hidden;
+}
+
+.drop-down .drop-button {
+	font-size: inherit;
+	font-family: inherit;
+	background-color: inherit;
+	padding: 0.75em 1em;
+	color: white;
+	text-align: center;
+	border: none;
+	outline: none;
+}
+
+.nav-bar ul .drop-content {
+	display: none;
+	position: absolute;
+	background-color: #9b9b9b;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	min-width: 100px;
+	z-index: 1;
+}
+
+.nav-bar ul .drop-content a {
+	float: none;
+	color: white;
+	padding: 12px 12px;
+	font-size: 20px;
+	text-decoration: none;
+	display: block;
+	text-align: right;
+}
+
+.nav-bar ul .drop-content a:hover {
+	background-color: black;
+}
+
+.drop-down:hover .drop-content {
+	display: block;
+	font-weight: 400;
+}
+
 .main-body {
 	background-color: white;
 	padding: 6.5em 3em;
