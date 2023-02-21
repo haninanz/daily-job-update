@@ -107,6 +107,23 @@ ul #right-aligned {
 	font-weight: 700;
 }
 
+.box-table {
+	padding: 0.4em;
+}
+
+.button-univ {
+	background-color: black;
+	color: whitesmoke;
+	border-radius: 5px;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	width: 110%;
+}
+
+.floating-button {
+	position: fixed;
+}
+
 .form-box {
 	width: 40%;
 	margin: 0 auto 0;
@@ -184,6 +201,15 @@ form .form-type {
 	padding: 1em;
 }
 
+.inner-box th {
+	border-radius: 30px;
+	padding: 0.6em;
+}
+
+#table-content th {
+	padding-left: 2.5em;
+}
+
 th {
 	text-align: left;
 }
@@ -191,6 +217,11 @@ th {
 td img {
 	width: 25px;
 	height: 27px;
+}
+
+.update-wip-button {
+	bottom: 27px;
+	right: 40px;
 }
 
 .left-box {
