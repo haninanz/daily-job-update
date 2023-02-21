@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Input Job Internal</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='copy_style.css') }}">
+	</head>
+	<body style="font-family: 'Segoe UI', sans-serif;">
+		<div class="nav-bar">
+			<ul>
+				<li id="home">
+					<a href="#">Input Job</a> 
+				</li>
+				<li id="right-aligned">
+					<a href="{{ url_for('home') }}">Home</a>
+				</li>
+			</ul>
+		</div>
+		<div class="main-body" style="padding: 2em;">
+			<div class="box form-box">
+				<h2>Form Job Internal</h2>
+				<form action="#">
+					<div class="internal-job">
+						<label for="name">Nama</label>
+						<input type="text" id="name" name="name"/>
+					</div>
+					<div class="internal-job" style="padding-bottom: 0.75em;">
+						<p>Hadir/Tidak Hadir</p>
+						<div class="internal-radio">
+							<input type="radio" id="internal" name="status" value="Hadir"/>
+							<label for="internal">Hadir</label>	
+						</div>
+						<div class="internal-radio">
+							<input type="radio" id="internal" name="status" value="Sakit"/>
+							<label for="internal">Tidak Hadir (Sakit)</label>	
+						</div>
+						<div class="internal-radio">
+							<input type="radio" id="internal" name="status" value="Cuti"/>
+							<label for="internal">Tidak Hadir (Cuti)</label>
+						</div>
+					</div>
+					<div class="internal-job">
+						<label for="project-name">Proyek yang Dikerjakan (Isi jika hadir)</label>
+						<input type="text" id="project-name" name="project-name" placeholder="Misal: TBINA - Pok. Andon Welder Press"/>
+					</div>
+					<div class="form-button">
+						<button type="submit">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
