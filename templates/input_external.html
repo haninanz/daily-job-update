@@ -10,6 +10,9 @@
 				<li id="home">
 					<a href="#">Input Job</a> 
 				</li>
+				<li>
+                    <a href="{{ url_for('wip')}}">Daftar WIP</a>
+                </li>
 				<li id="right-aligned">
 					<a href="{{ url_for('home') }}">Home</a>
 				</li>
@@ -40,7 +43,7 @@
 						<input type="text" id="time" name="time" placeholder="Misal: 09:00-17:00"/>
 					</div>
 					<div class="form-button">
-						<button type="submit">Submit</button>
+						<button class="button-univ" type="submit">Submit</button>
 					</div>
 				</form>
 			</div>

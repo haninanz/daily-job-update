@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+import os
+from flask import Flask, json, render_template
 
 app = Flask(__name__)
 
@@ -13,6 +14,13 @@ def internal_job_input():
 @app.route('/external/')
 def external_job_input():
 	return render_template('input_external.html')
+
+@app.route('/wip/')
+def wip():
+    data = []
+    with open('data/wip_2023.json', 'r') as json_data:
+        data = json.load(json_data)
+    return render_template("wip.html", data=data)
 
 if __name__ == '__main__':
 	app.run()
