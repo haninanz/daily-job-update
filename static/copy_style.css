@@ -160,6 +160,11 @@ form .form-type {
 	padding-bottom: 0.25em;
 }
 
+.external-job input[type="date"], .internal-job input[type="date"] {
+	padding: 0.5em;
+	font-family: "Segoe UI", sans-serif;
+}
+
 .external-job input[type="text"], .internal-job input[type="text"] {
 	padding: 0.5em;
 }

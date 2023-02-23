@@ -18,29 +18,33 @@
 		<div class="main-body" style="padding: 2em;">
 			<div class="box form-box">
 				<h2>Form Job Internal</h2>
-				<form action="#">
+				<form method="post">
+					<div class="internal-job">
+						<label for="today-date">Tanggal</label>
+						<input type="date" name="today_date" value="{{ request.form['today_date'] }}"/>
+					</div>
 					<div class="internal-job">
 						<label for="name">Nama</label>
-						<input type="text" id="name" name="name"/>
+						<input type="text" name="name" value="{{ request.form['name'] }}"/>
 					</div>
 					<div class="internal-job" style="padding-bottom: 0.75em;">
 						<p>Hadir/Tidak Hadir</p>
 						<div class="internal-radio">
-							<input type="radio" id="internal" name="status" value="Hadir"/>
+							<input type="radio" name="status" value=" {{ request.form['status'] }}"/>
 							<label for="internal">Hadir</label>	
 						</div>
 						<div class="internal-radio">
-							<input type="radio" id="internal" name="status" value="Sakit"/>
+							<input type="radio" name="status" value=" {{ request.form['status'] }}"/>
 							<label for="internal">Tidak Hadir (Sakit)</label>	
 						</div>
 						<div class="internal-radio">
-							<input type="radio" id="internal" name="status" value="Cuti"/>
+							<input type="radio" name="status" value=" {{ request.form['status'] }}"/>
 							<label for="internal">Tidak Hadir (Cuti)</label>
 						</div>
 					</div>
 					<div class="internal-job">
 						<label for="project-name">Proyek yang Dikerjakan (Isi jika hadir)</label>
-						<input type="text" id="project-name" name="project-name" placeholder="Misal: TBINA - Pok. Andon Welder Press"/>
+						<input type="text" name="project_name" placeholder="Misal: TBINA - Pok. Andon Welder Press" value="{{ request.form['project_name'] }}"/>
 					</div>
 					<div class="form-button">
 						<button type="submit">Submit</button>

@@ -18,26 +18,30 @@
 		<div class="main-body" style="padding: 2em;">
 			<div class="box form-box">
 				<h2>Form Job Eksternal</h2>
-				<form action="#">
+				<form method="post">
+					<div class="external-job">
+						<label for="today-date">Tanggal</label>
+						<input type="date" name="today_date" value="{{ request.form['today_date']}}"/>
+					</div>
 					<div class="external-job">
 						<label for="project-name">Nama Proyek</label>
-						<input type="text" id="project-name" name="project-name" placeholder="Misal: TBINA - Pok. Andon Welder Press"/>
+						<input type="text" name="project_name" placeholder="Misal: TBINA - Pok. Andon Welder Press" value="{{ request.form['project_name'] }}"/>
 					</div>
 					<div class="external-job">
 						<label for="member-name">Nama Anggota</label>
-						<input type="text" id="member-name" name="member-name"/>
+						<input type="text" name="member_name" value="{{ request.form['member_name'] }}"/>
 					</div>
 					<div class="external-job">
 						<label for="ride">Kendaraan yang Dipakai</label>
-						<input type="text" id="ride" name="ride" placeholder="Nama Mobil - Plat No"/>
+						<input type="text" name="ride_no" placeholder="Nama Mobil - Plat No" value="{{ request.form['ride_no'] }}"/>
 					</div>
 					<div class="external-job">
 						<label for="funds">Jumlah Uang Muka</label>
-						<input type="text" id="funds" name="funds" placeholder="Misal: Rp. 300.000,-"/>
+						<input type="text" name="funds" placeholder="Misal: Rp. 300.000,-" value="{{ request.form['funds'] }}"/>
 					</div>
 					<div class="external-job">
 						<label for="time">Jam Mulai - Selesai</label>
-						<input type="text" id="time" name="time" placeholder="Misal: 09:00-17:00"/>
+						<input type="text" name="time" placeholder="Misal: 09:00-17:00" value="{{ request.form['time'] }}"/>
 					</div>
 					<div class="form-button">
 						<button type="submit">Submit</button>
