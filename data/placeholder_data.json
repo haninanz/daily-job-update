@@ -1,0 +1,31 @@
+{
+	"2023-02-06": [{
+		"type": "external",
+		"project_name": "KYB Table Assy",
+		"location": "Kayaba",
+		"members": "Asep Sugiarno, Darmawan, Superi",
+		"ride": "Datsun B1207KRV",
+		"funds": "Rp. 300,000,-",
+		"time": "09:00 - Selesai"
+	},
+	{
+		"type": "external",
+		"project_name": "Cute Guy Project",
+		"location": "MMR",
+		"members": "Tenjroti, Mroli, Crup-crup",
+		"ride": "BRV",
+		"funds": "Rp. 1,000,000,-",
+		"time": "Full Day"
+	},
+	{
+		"type": "internal",
+		"name": "Ponpon",
+		"status": "Sakit"
+	},
+	{
+		"type": "internal",
+		"name": "Pepelita",
+		"status": "Hadir",
+		"project_name": "TBINA Welder Press"	
+	}]
+}

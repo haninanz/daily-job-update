@@ -10,7 +10,7 @@
 				<li id="home">
 					<a href="#">Input Job</a> 
 				</li>
-				<li>
+				<li style="font-weight: 600;">
                     <a href="{{ url_for('wip')}}">Daftar WIP</a>
                 </li>
 				<li id="right-aligned">
@@ -20,7 +20,7 @@
 		</div>
 		<div class="main-body" style="padding: 2em;">
 			<div class="box form-box">
-				<h2>Form Job Eksternal</h2>
+				<h2 class="form-header">Form Job Eksternal</h2>
 				<form method="post">
 					<div class="external-job">
 						<label for="today-date">Tanggal</label>
@@ -28,11 +28,15 @@
 					</div>
 					<div class="external-job">
 						<label for="project-name">Nama Proyek</label>
-						<input type="text" name="project_name" placeholder="Misal: TBINA - Pok. Andon Welder Press" value="{{ request.form['project_name'] }}"/>
+						<input type="text" name="project_name" placeholder="Misal: Pok. Andon Welder Press" value="{{ request.form['project_name'] }}"/>
 					</div>
 					<div class="external-job">
 						<label for="member-name">Nama Anggota</label>
 						<input type="text" name="member_name" value="{{ request.form['member_name'] }}"/>
+					</div>
+					<div class="external-job">
+						<label for="location">Lokasi</label>
+						<input type="text" name="location" placeholder="Misal: TBINA Cibitung" value="{{ request.form['location'] }}">
 					</div>
 					<div class="external-job">
 						<label for="ride">Kendaraan yang Dipakai</label>

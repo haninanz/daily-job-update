@@ -10,7 +10,7 @@
 				<li id="home">
 					<a href="#">Daily Job Update</a> 
 				</li>
-				<li>
+				<li style="font-weight: 600;">
                     <a href="{{ url_for('wip')}}">Daftar WIP</a>
                 </li>
 				<li class="drop-down" id="right-aligned">
@@ -23,116 +23,65 @@
 			</ul>
 		</div>
 		<div class="main-body" style="padding: 2em;">
+			{% for date in job_updates %}
 			<div class="box">
-				<h2>Senin, 6 Februari 2023</h2>
+				<h2>{{ date }}</h2>
 				<div class="box-wrapper">
-					<div class="inner-box">
-						<table>
-							<tr>
-								<th>External Kayaba</th>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-business-report-53.png') }}"></td>
-								<td>Piston Rod Cleaning, Table Assy for Piston Assy</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-employee-53.png')}}"></td>
-								<td>Asep, Wawan & Ferry</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-96.png') }}"></td>
-								<td>Datsun B 1207 KRV</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-project-time-53.png') }}">
-								</td>
-								<td>Rp. 300,000,-</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-dollar-coins-53.png') }}"></td>
-								<td>09:00 - Selesai</td>
-							</tr>
-						</table>
-					</div>
-					<div class="inner-box">
-						<table>
-							<tr>
-								<th>External AII,FTR & AJT</th>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-business-report-53.png') }}"></td>
-								<td>Invoice AII, FTR & Parts AJT</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-employee-53.png')}}"></td>
-								<td>Bari</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-96.png') }}"></td>
-								<td>Beat Pop</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-project-time-53.png') }}"></td>
-								<td>Rp. 400,000,-</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-dollar-coins-53.png') }}"></td>
-								<td>09:45 - Selesai</td>
-							</tr>
-						</table>
-					</div>
-					<div class="inner-box">
-						<table>
-							<tr>
-								<th>External Glodok</th>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-business-report-53.png') }}"></td>
-								<td>Belanja Bahan Baku</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-employee-53.png')}}"></td>
-								<td>Widodo</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-96.png') }}"></td>
-								<td>Revo B 3429 KCY</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-project-time-53.png') }}"></td>
-								<td>Rp. 3,000,000,-</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-dollar-coins-53.png') }}"></td>
-								<td>09:45 - Selesai</td>
-							</tr>
-						</table>
-					</div>
-					<div class="inner-box">
-						<table>
-							<tr>
-								<th>Internal Jobdesc & Lainnya</th>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
-								<td>P. Yani - Sakit</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
-								<td>Deni - Cuti</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
-								<td>Sukron - Modif Tangga</td>
-							</tr>
-							<tr>
-								<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
-								<td>A.Muchlis - Table Nut Runner</td>
-							</tr>
-						</table>
-					</div>
+					{% for jobs in job_updates[date] %}
+						{% if jobs.type == "external" %}
+							<div class="inner-box">
+								<table>
+									<tr>
+										<th>External {{ jobs.location }}</th>
+									</tr>
+									<tr>
+										<td class="center"><img src="{{ url_for('static', filename='icons8-business-report-53.png') }}"></td>
+										<td>{{ jobs.project_name }}</td>
+									</tr>
+									<tr>
+										<td class="center"><img src="{{ url_for('static', filename='icons8-employee-53.png')}}"></td>
+										<td>{{ jobs.members }}</td>
+									</tr>
+									<tr>
+										<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-96.png') }}"></td>
+										<td>{{ jobs.ride }}</td>
+									</tr>
+									<tr>
+										<td class="center"><img src="{{ url_for('static', filename='icons8-project-time-53.png') }}">
+										</td>
+										<td>{{ jobs.funds }}</td>
+									</tr>
+									<tr>
+										<td class="center"><img src="{{ url_for('static', filename='icons8-dollar-coins-53.png') }}"></td>
+										<td>{{ jobs.time }}</td>
+									</tr>
+								</table>
+							</div>
+						{% else %}
+							<div class="inner-box">
+								<table>
+									<tr>
+										<th>Internal Job & Lainnya</th>
+									</tr>
+									{% if jobs.project_name is defined %}
+										<tr>
+											<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
+											<td>{{ jobs.name }} - {{ jobs.project_name }}</td>
+											
+										</tr>
+									{% else %}
+										<tr>
+											<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
+											<td>{{ jobs.name }} - {{ jobs.status }}</td>
+										</tr>
+									{% endif %}
+								</table>
+							</div>
+						{% endif %}
+					{% endfor %}
 				</div>
 			</div>
+			{% endfor %}
 		</div>
 		<div class="footer">
 			<p>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>

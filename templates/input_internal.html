@@ -10,7 +10,7 @@
 				<li id="home">
 					<a href="#">Input Job</a> 
 				</li>
-				<li>
+				<li style="font-weight: 600;">
                     <a href="{{ url_for('wip')}}">Daftar WIP</a>
                 </li>
 				<li id="right-aligned">
@@ -20,7 +20,7 @@
 		</div>
 		<div class="main-body" style="padding: 2em;">
 			<div class="box form-box">
-				<h2>Form Job Internal</h2>
+				<h2 class="form-header">Form Job Internal</h2>
 				<form method="post">
 					<div class="internal-job">
 						<label for="today-date">Tanggal</label>
@@ -33,15 +33,15 @@
 					<div class="internal-job" style="padding-bottom: 0.75em;">
 						<p>Hadir/Tidak Hadir</p>
 						<div class="internal-radio">
-							<input type="radio" name="status" value=" {{ request.form['status'] }}"/>
+							<input type="radio" name="status" value="Hadir"/>
 							<label for="internal">Hadir</label>	
 						</div>
 						<div class="internal-radio">
-							<input type="radio" name="status" value=" {{ request.form['status'] }}"/>
+							<input type="radio" name="status" value="Sakit}}"/>
 							<label for="internal">Tidak Hadir (Sakit)</label>	
 						</div>
 						<div class="internal-radio">
-							<input type="radio" name="status" value=" {{ request.form['status'] }}"/>
+							<input type="radio" name="status" value="Cuti"/>
 							<label for="internal">Tidak Hadir (Cuti)</label>
 						</div>
 					</div>
