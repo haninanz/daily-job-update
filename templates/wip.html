@@ -29,11 +29,16 @@
                         <th class="center">Pengeluaran Projek</th>
                     </tr>
                     <tbody>
+                        {% set count = namespace(value=1) %}
                         {% for data in data %}
+                        {% set unnamed = data.namaAkun.endswith(" ") or data.namaAkun.endswith("-") %}
                         <tr class="inner-box">
-                            <td>{{loop.index}}.</td>
-                            <td>{{data.namaAkun}}</td>
-                            <td class="center">{{data.neracaSaldoDebet}}</td>
+                            {% if not unnamed: %}
+                                <td>{{count.value}}.</td>
+                                <td>{{data.namaAkun}}</td>
+                                <td class="center">{{data.neracaSaldoDebet}}</td>
+                                {% set count.value = count.value + 1 %}
+                            {% endif %}
                         </tr>
                         {% endfor %}
                     </tbody>
