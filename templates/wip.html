@@ -31,9 +31,8 @@
                     <tbody>
                         {% set count = namespace(value=1) %}
                         {% for data in data %}
-                        {% set unnamed = data.namaAkun.endswith(" ") or data.namaAkun.endswith("-") %}
                         <tr class="inner-box">
-                            {% if not unnamed: %}
+                            {% if not (data.namaAkun.endswith(" ") or data.namaAkun.endswith("-")): %}
                                 <td>{{count.value}}.</td>
                                 <td>{{data.namaAkun}}</td>
                                 <td class="center">{{data.neracaSaldoDebet}}</td>
