@@ -86,16 +86,9 @@ ul #right-aligned {
 	padding: 6.5em 3em;
 }
 
-.wrapper {
-	display: grid;
-	grid-template-columns: auto 37% auto 37% auto;
-	grid-auto-rows: 300px;
-	gap: 1em;
-}
-
 .box {
 	display: grid;
-	padding: 1em;
+	padding: 1em 1.5em 2em;
 	border: 2px solid;
 	border-color: #c6c5c5;
 	border-radius: 30px;
@@ -169,8 +162,13 @@ ul #right-aligned {
 .box-wrapper {
 	display: grid;
 	grid-template-columns: 48.974% 48.974%;
-	grid-auto-rows: auto;
-	gap: 1em;
+	grid-template-rows: auto auto;
+	grid-auto-flow: columns; 
+	grid-gap: 1em;
+}
+
+.box-wrapper .internal-box {
+	padding: 0.5em 1em;
 }
 
 .inner-box {

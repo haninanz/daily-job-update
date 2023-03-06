@@ -9,5 +9,11 @@
 		"name": "Pepelita",
 		"status": "Hadir",
 		"project_name": "TBINA - Welder Press"
+	},
+	{
+		"type": "internal",
+		"name": "Hasina",
+		"status": "Hadir",
+		"project_name": "Progress Daily Job Update"
 	}]
 }

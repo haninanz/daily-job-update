@@ -23,62 +23,63 @@
 			</ul>
 		</div>
 		<div class="main-body" style="padding: 2em;">
-			{% for date in job_updates %}
+			{% for date in working_date %}
 			<div class="box">
 				<h2>{{ date }}</h2>
 				<div class="box-wrapper">
-					{% for jobs in job_updates[date] %}
-						{% if jobs.type == "external" %}
+					{% if date in external_jobs %}
+						{% for job in external_jobs[date] %}
 							<div class="inner-box">
 								<table>
 									<tr>
-										<th>External {{ jobs.location }}</th>
+										<th>External {{ job.location }}</th>
 									</tr>
 									<tr>
 										<td class="center"><img src="{{ url_for('static', filename='icons8-business-report-53.png') }}"></td>
-										<td>{{ jobs.project_name }}</td>
+										<td>{{ job.project_name }}</td>
 									</tr>
 									<tr>
 										<td class="center"><img src="{{ url_for('static', filename='icons8-employee-53.png')}}"></td>
-										<td>{{ jobs.members }}</td>
+										<td>{{ job.members }}</td>
 									</tr>
 									<tr>
 										<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-96.png') }}"></td>
-										<td>{{ jobs.ride }}</td>
+										<td>{{ job.ride }}</td>
 									</tr>
 									<tr>
-										<td class="center"><img src="{{ url_for('static', filename='icons8-project-time-53.png') }}">
-										</td>
-										<td>{{ jobs.funds }}</td>
+										<td class="center"><img src="{{ url_for('static', filename='icons8-project-time-53.png') }}"></td>
+										<td>{{ job.funds }}</td>
 									</tr>
 									<tr>
 										<td class="center"><img src="{{ url_for('static', filename='icons8-dollar-coins-53.png') }}"></td>
-										<td>{{ jobs.time }}</td>
+										<td>{{ job.time }}</td>
 									</tr>
 								</table>
 							</div>
-						{% else %}
-							<div class="inner-box">
-								<table>
-									<tr>
-										<th>Internal Job & Lainnya</th>
-									</tr>
-									{% if jobs.project_name is defined %}
+						{% endfor %}
+					{% endif %}
+					{% if date in internal_jobs %}
+						<div class="inner-box internal-box">
+							<table>
+								<tr>
+									<th>Internal Job & Lainnya</th>
+								</tr>
+								{% for job in internal_jobs[date] %}
+									{% if job.project_name is defined and job.project_name != '' %}
 										<tr>
 											<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
-											<td>{{ jobs.name }} - {{ jobs.project_name }}</td>
-											
+											<td>{{ job.name }} - {{ job.project_name }}</td>
 										</tr>
 									{% else %}
 										<tr>
 											<td class="center"><img src="{{ url_for('static', filename='icons8-glyph-arrow-96.png') }}"></td>
-											<td>{{ jobs.name }} - {{ jobs.status }}</td>
+											<td>{{ job.name }} - {{ job.status }}</td>
 										</tr>
 									{% endif %}
-								</table>
-							</div>
-						{% endif %}
-					{% endfor %}
+								{% endfor %}
+							</table>
+						</div>
+					{% endif %}
 				</div>
 			</div>
 			{% endfor %}
