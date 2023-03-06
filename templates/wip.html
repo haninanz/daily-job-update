@@ -16,8 +16,8 @@
                     <a href="#">Daftar WIP</a>
                 </li>
                 <li id="right-aligned">
-					<a href="{{ url_for('home') }}">Home</a>
-				</li>
+		    <a href="{{ url_for('home') }}">Home</a>
+		</li>
             </ul>
         </div>
         <div class="main-body" style="padding: 2em;">
@@ -29,11 +29,15 @@
                         <th class="center">Pengeluaran Projek</th>
                     </tr>
                     <tbody>
+                        {% set count = namespace(value=1) %}
                         {% for data in data %}
                         <tr class="inner-box">
-                            <td>{{loop.index}}.</td>
-                            <td>{{data.namaAkun}}</td>
-                            <td class="center">{{data.neracaSaldoDebet}}</td>
+                            {% if not (data.namaAkun.endswith(" ") or data.namaAkun.endswith("-")): %}
+                                <td>{{count.value}}.</td>
+                                <td>{{data.namaAkun}}</td>
+                                <td class="center">{{data.neracaSaldoDebet}}</td>
+                                {% set count.value = count.value + 1 %}
+                            {% endif %}
                         </tr>
                         {% endfor %}
                     </tbody>
